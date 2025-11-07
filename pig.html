@@ -1,0 +1,41 @@
+<body>
+    <link rel="stylesheet" type="text/css" href="jeremy.css">
+    <title>fillermcdiller</title>
+    <h1>rng game :D</h1>
+    <button onclick="getRandomInt()" class="joober">click pls</button>
+    <p><span id="randomNumberDisplay"></span></p>
+    <p id="sum">Sum: 0</p>
+    <p id="highScore">High Score: 0</p> <!-- Added high score display -->
+    <p><span id="loser"></span></p>
+
+    <script>
+        let sum = 0;
+        let highScore = 0;  // Initialize high score
+
+        function getRandomInt() {
+            const min = 1;
+            const max = 6;
+            const randomInteger = Math.floor(Math.random() * (max - min + 1)) + min;
+            console.log(randomInteger);
+            
+            document.getElementById("randomNumberDisplay").innerText = "Random Number: " + randomInteger;
+
+            if (randomInteger < 2) {
+                document.getElementById('loser').innerText = "YOU LOSE!";
+                
+                // Update high score if current sum is greater
+                if (sum > highScore) {
+                    highScore = sum;
+                    document.getElementById('highScore').innerText = "High Score: " + highScore;
+                }
+                
+                sum = 0;  // Reset sum
+            } else {
+                document.getElementById('loser').innerText = "";
+                sum += randomInteger;  // Add random integer to sum
+            }
+
+            document.getElementById('sum').innerText = "Sum: " + sum;
+        }
+    </script>
+</body>

@@ -1,0 +1,58 @@
+<head>
+    <body>
+      <div id ="container"
+      class="bounds">
+  <img class="image" id="benpoggers" src="benpoggers.png" height="75" width="90"></img>
+</div>
+<link rel ="stylesheet" type="text/css" href="jeremy.css">
+<h1>THE ULTIMATE LAG TEST :3</h1>
+<p>try to get over 100,000 bens without the tab freezing :P</p>
+       <button id="clone-button" onclick="cloneElement()">RELEASE THE BENS</button>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("container");
+    const cloneButton = document.getElementById("clone-button");
+
+    function cloneElement() {
+        const elementToClone = document.querySelector(".bounds");
+        const clonedElement = elementToClone.cloneNode(true);
+        container.appendChild(clonedElement);
+    }
+    cloneButton.addEventListener("click", cloneElement);
+});
+        
+      function wiki() {
+        location.replace("https://en.wikipedia.org/wiki/Croutons")
+      }
+      </script>
+        <h2 id="counter"></h2>
+
+    <script>
+    const spawnBtn = document.getElementById('clone-button');
+    const container = document.getElementById('container');
+    const counterDisplay = document.getElementById('counter');
+
+    let benCount = 1;
+
+    spawnBtn.addEventListener('click', () => {
+      // Create new div
+      const ben = document.createElement('div');
+      ben.className = 'image';
+      
+      // OPTIONAL: Assign a unique ID if needed
+      ben.id = `benpoggers-${benCount + 1}`;
+
+      // Add it to the container
+      container.appendChild(ben);
+
+      // Update the counter
+      const allBens = container.querySelectorAll('.image');
+      counterDisplay.textContent = `Bens: ${allBens.length}`;
+
+      benCount++;
+    });
+  </script>
+
+</body>
+</html>
+</div>

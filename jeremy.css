@@ -1,0 +1,196 @@
+@font-face {
+            font-family: 'ComicSansWeb';
+            src: url('fonts/ComicSansMS.woff2') format('woff2'),
+                 url('fonts/ComicSansMS.woff') format('woff');
+            /* Add other formats like .ttf, .otf for broader compatibility */
+            font-weight: normal;
+            font-style: normal;
+        }
+body {
+font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 100;
+  font-family: 'Comic Sans MS';
+   z-index: 10;
+}
+.ohne {
+  text-align: left;
+  align-items: left;
+  align-self: left;
+  float: left;
+  width: 125;
+  height: 125;
+  margin: 0 220 0;
+   z-index: 10;
+}
+.ohne2 {
+   text-align: left;
+  align-items: left;
+  align-self: left;
+  float: right;
+  width: 125;
+  height: 125;
+  margin: 0 220 0;
+   z-index: 10;
+}
+p1 {
+  font-size: 100px;
+  text-align: center;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+   z-index: 10;
+}
+p4 {
+  text-align: center;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+   z-index: 10;
+}
+pd {
+  text-align: center;
+ font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  z-index: 10;
+}
+.texter {
+ max-width: 1367px;
+}
+p {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  text-align: center;
+  z-index: 10;
+}
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+        .jeremypng {
+        animation: spin 2s linear infinite;
+        align-items: center;
+        align-self: center;
+        float: none;
+    }
+  body, html {
+    height: 100%;
+    font-family:'Times New Roman', Times, serif
+  }
+
+  .bounds {
+  width: 1px;
+  height: 1px;
+  float: left;
+  align-self: left;
+}
+
+@keyframes hor-movement {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(1470px - 200px); /* container width - image width */
+  }
+}
+
+@keyframes ver-movement {
+  from {
+    top: 0;
+  }
+  to {
+    top: calc(720px - 250px); 
+  }
+}
+
+   .bliss {
+            z-index: 1;
+            width: 1920;
+            height: 1080;
+        }
+          .dirt {
+            z-index: 1;
+            width: 1920;
+            height: 10800000;
+        }
+
+.image {
+  position: absolute;
+  width: 200px;  /* set your image size */
+  height: 250px;
+
+  /* combine horizontal + vertical movement and a squish transform animation */
+  animation-name: hor-movement, ver-movement, squish;
+  animation-duration: 3s, 4s, 0.6s;
+  animation-iteration-count: infinite, infinite, infinite;
+  animation-direction: alternate, alternate, alternate;
+  animation-timing-function: linear, linear, ease-in-out;
+
+  transform-origin: center center;
+}
+
+/* squish while flying */
+@keyframes squish {
+  0%   { transform: scale(1,1); }
+  50%  { transform: scale(1.15,0.85); }
+  100% { transform: scale(1,1); }
+}
+
+/* a short explode animation (scale up + fade out) */
+@keyframes explode {
+  0%   { transform: translate(-50%,-50%) scale(0.8); opacity: 1; filter: none; }
+  50%  { transform: translate(-50%,-50%) scale(1.4); opacity: 0.95; filter: saturate(1.2) contrast(1.1); }
+  100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; filter: blur(2px); }
+}
+
+/* Explosion wrapper placed at page coordinates; uses translate(-50%,-50%) to center */
+.explosion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: center center;
+  width: 128px;   /* default explosion size; JS can override inline if needed */
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: explode 0.75s ease-out forwards;
+}
+
+/* If we want a simple image inside explosion, ensure it fills */
+.explosion img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* helper to pause the flying/squish animations */
+.image.paused {
+  animation-play-state: paused;
+}
+
+  .menu {
+    display: none;
+    background-color: #ffffff;
+  }
+  #imagesocial {
+              display: none;
+              align-content: center;
+  
+  }
+  #imagesocialtext {
+            display: none;
+  }
+  #homeimg1 {
+            text-align: left;
+  }
+  .square {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+  }
+
+
